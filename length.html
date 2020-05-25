@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Length</title>
+    <link rel="stylesheet" href="length.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Quicksand">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karla">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rasa">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Forum">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2739/2739086.svg" type="image/x-icon">
+    <style>
+        #ex {
+            background-color: rgba(255, 166, 0, 0.384);
+            color: blue;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="typed.js"></script>
+    <script src="typed.min.js"></script>
+    <script src="length.js"></script>
+    <div class="navbar">
+        <a id="home" style="background-color: black; color: gray;">
+            <i class="fas fa-ellipsis-h"></i></a>
+        <div id="op">
+            <a href="/" style="background-color: blue; color: orange;">Homepage</a>
+            <a href="/length" id="ex">Length</a>
+            <a href="/mass" id="ex">Mass</a>
+            <a href="/velocity" id="ex">Velocity</a>
+        </div>
+        <script>
+            $(document).ready(function () {
+                $('#op').hide();
+                $("#home").click(function () {
+                    $('#op').slideToggle();
+                })
+            });
+        </script>
+        <a href="#kilometer">Kilometer</a>
+        <a href="#meter">Meter</a>
+        <a href="#centimeter">Centimeters</a>
+        <a href="#millimeter">Millimeters</a>
+        <a href="#micrometer">Micrometers</a>
+        <a href="#nanometer">Nanometers</a>
+        <a href="#mile">Miles</a>
+        <a href="#yard">Yards</a>
+        <a href="#foot">Feet</a>
+        <a href="#inch">Inches</a>
+        <a href="#nauMi">Nautical Miles</a>
+    </div>
+    <div class="about">
+        <fieldset>
+            <legend>
+                About:
+            </legend>
+            This page converts length from selected units to every unit recognized by the
+            <abbr title="International System of Units">S.I. units</abbr><br>
+            <div id="addText">
+                To convert from a unit, click on the Navigation bar above or scroll down till you see the
+                title of the unit you want to convert from. Then click on the input box to enter a number
+                and once you enter a <span style="border: 1px solid white;"> <strong> number</strong></span>
+                , then the submit button would show up with an in progress symbol.
+                Click on the button when done to display the conversions and click the up symbol to hide it.
+            </div>
+            <span style="text-decoration: underline; cursor: pointer;" id="rm">Read more</span>
+        </fieldset>
+        <script>
+            $(document).ready(function () {
+                $("#addText").hide();
+                $('#rm').click(function () {
+                    $("#addText").slideToggle(1000);
+                });
+            });
+        </script>
+    </div>
+    <div id="kilometer">
+        <h1 class="headers">
+            Kilometers
+        </h1>
+        <input type="number" class="num" id="kmNum" min="0" placeholder="Enter Kilometers here" step=".01"><br>
+        <button class="submit" id="kmSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="kmConv">
+            <h6>
+                <fieldset id="km">
+                    <legend>Kilometer to <span id="Kmtyped"></span><i id='kmUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="kmEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="meter">
+        <h1 class="headers">
+            Meters
+        </h1>
+        <input type="number" class="num" id="mNum" min="0" placeholder="Enter Meters here" step=".01"><br>
+        <button class="submit" id="mSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="mConv">
+            <h6>
+                <fieldset id="m">
+                    <legend>Meter to <span id="Mtyped"></span><i id='mUp' class="fa fa-angle-double-up"></i></legend>
+                    <div id="mEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="centimeter">
+        <h1 class="headers">
+            Centimeters
+        </h1>
+        <input type="number" class="num" id="cmNum" min="0" placeholder="Enter Centimeters here" step=".01"><br>
+        <button class="submit" id="cmSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="cmConv">
+            <h6>
+                <fieldset id="cm">
+                    <legend>Centimeter to <span id="Cmtyped"></span><i id='cmUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="cmEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="millimeter">
+        <h1 class="headers">
+            Millimeters
+        </h1>
+        <input type="number" class="num" id="mmNum" min="0" placeholder="Enter Millimeters here" step=".01"><br>
+        <button class="submit" id="mmSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="mmConv">
+            <h6>
+                <fieldset id="mm">
+                    <legend>Millimeter to <span id="Mmtyped"></span><i id='mmUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="mmEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="micrometer">
+        <h1 class="headers">
+            Micrometers
+        </h1>
+        <input type="number" class="num" id="umNum" min="0" placeholder="Enter Micrometers here" step=".01"><br>
+        <button class="submit" id="umSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="umConv">
+            <h6>
+                <fieldset id="um">
+                    <legend>Micrometer to <span id="Umtyped"></span><i id='umUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="umEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="nanometer">
+        <h1 class="headers">
+            Nanometers
+        </h1>
+        <input type="number" class="num" id="nmNum" min="0" placeholder="Enter Nanometers here" step=".01"><br>
+        <button class="submit" id="nmSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="nmConv">
+            <h6>
+                <fieldset id="nm">
+                    <legend>Nanometer to <span id="Nmtyped"></span><i id='nmUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="nmEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="mile">
+        <h1 class="headers">
+            Miles
+        </h1>
+        <input type="number" class="num" id="miNum" min="0" placeholder="Enter Miles here" step=".01"><br>
+        <button class="submit" id="miSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="miConv">
+            <h6>
+                <fieldset id="mi">
+                    <legend>Miles to <span id="Mityped"></span><i id='miUp' class="fa fa-angle-double-up"></i></legend>
+                    <div id="miEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="yard">
+        <h1 class="headers">
+            Yards
+        </h1>
+        <input type="number" class="num" id="ydNum" min="0" placeholder="Enter Yards here" step=".01"><br>
+        <button class="submit" id="ydSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="ydConv">
+            <h6>
+                <fieldset id="yd">
+                    <legend>Yards to <span id="Ydtyped"></span><i id='ydUp' class="fa fa-angle-double-up"></i></legend>
+                    <div id="ydEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="foot">
+        <h1 class="headers">
+            Foot
+        </h1>
+        <input type="number" class="num" id="ftNum" min="0" placeholder="Enter Foots here" step=".01"><br>
+        <button class="submit" id="ftSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="ftConv">
+            <h6>
+                <fieldset id="ft">
+                    <legend>Foot to <span id="Fttyped"></span><i id='ftUp' class="fa fa-angle-double-up"></i></legend>
+                    <div id="ftEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="inch">
+        <h1 class="headers">
+            Inch
+        </h1>
+        <input type="number" class="num" id="inNum" min="0" placeholder="Enter Inches here" step=".01"><br>
+        <button class="submit" id="inSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="inConv">
+            <h6>
+                <fieldset id="in">
+                    <legend>Inch to <span id="Intyped"></span><i id='inUp' class="fa fa-angle-double-up"></i></legend>
+                    <div id="inEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="nauMi">
+        <h1 class="headers">
+            Nautical Miles
+        </h1>
+        <input type="number" class="num" id="naNum" min="0" placeholder="Enter Nautical Miles here" step=".01"><br>
+        <button class="submit" id="naSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="naConv">
+            <h6>
+                <fieldset id="na">
+                    <legend>Nautical Miles to <span id="Natyped"></span><i id='naUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="naEmpty">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <script>
+        var Kmtyped = new Typed('#Kmtyped', {
+            strings: ['Meter', 'Centimeter', 'Millimeter', 'Micrometer', 'Nanometer',
+                'Miles', 'Yards', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Mtyped = new Typed('#Mtyped', {
+            strings: ['Kilometer', 'Centimeter', 'Millimeter', 'Micrometer', 'Nanometer',
+                'Miles', 'Yards', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Cmtyped = new Typed('#Cmtyped', {
+            strings: ['Kilometer', 'Meter', 'Millimeter', 'Micrometer', 'Nanometer',
+                'Miles', 'Yards', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Mmtyped = new Typed('#Mmtyped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Micrometer', 'Nanometer',
+                'Miles', 'Yards', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Umtyped = new Typed('#Umtyped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Millimeter', 'Nanometer',
+                'Miles', 'Yards', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Nmtyped = new Typed('#Nmtyped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Millimeter', 'Micrometer',
+                'Miles', 'Yards', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Mityped = new Typed('#Mityped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Millimeter', 'Micrometer',
+                'Nanometers', 'Yards', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Ydtyped = new Typed('#Ydtyped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Millimeter', 'Micrometer',
+                'Nanometers', 'Miles', 'Foot', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Fttyped = new Typed('#Fttyped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Millimeter', 'Micrometer',
+                'Nanometers', 'Miles', 'Yards', 'Inch', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Intyped = new Typed('#Intyped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Millimeter', 'Micrometer',
+                'Nanometers', 'Miles', 'Yards', 'Foot', 'Nautical Miles'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Natyped = new Typed('#Natyped', {
+            strings: ['Kilometer', 'Meter', 'Centimeter', 'Millimeter', 'Micrometer',
+                'Nanometers', 'Miles', 'Yards', 'Foot', 'Inch'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+    </script>
+</body>
+
+</html>
