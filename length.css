@@ -77,16 +77,10 @@ body{
 fieldset{
     background-color: rgba(0, 0, 0, 0.24);
 }
-#kmUp{
-    cursor: pointer;
-}
 .headers{
     font-family: Rasa;
     text-align: center;
     border-bottom: 2px solid crimson;
-}
-#mUp{
-    cursor: pointer;
 }
 i{
     cursor: pointer;

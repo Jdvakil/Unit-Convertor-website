@@ -1,9 +1,10 @@
+let port = process.env.PORT||9997;
 const express = require('express');
 const app = express();
 const bp = require('body-parser');
 const path = require('path');
 const joi = require('joi');
-app.listen(9997);
+app.listen(port);
 
 app.use(express.static(path.join(__dirname, "/")))
 
@@ -17,7 +18,10 @@ app.get('/mass',(req,res)=>{
     res.sendFile(path.join(__dirname,'/','mass.html'))
 });
 app.get('/velocity',(req,res)=>{
-    res.sendFile(path.join(__dirname,'/','velocity.html'))
+    res.sendFile(path.join(__dirname,'/','velocity.html'));
+});
+app.get('/calculator', (req,res)=>{
+    res.sendFile(path.join(__dirname,'/', 'calculator.html'));
 });
 app.use(function(req,res) {
     res.type('html');

@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mass</title>
+    <link rel="stylesheet" href="mass.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Varela">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Forum">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Kanit">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nanum Myeongjo">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo">
+    <link rel="shortcut icon" href="https://image.flaticon.com/icons/svg/2972/2972271.svg" type="image/x-icon">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="mass.js"></script>
+</head>
+
+<body>
+    <script src="typed.js"></script>
+    <script src="typed.min.js"></script>
+    <nav class="navbar navbar-expand-lg navbar-light"
+        style="background-color: rgba(173, 216, 230, 0.527); font-size: 20px; border-bottom: 2px solid black;">
+        <a class="navbar-brand dropdown-toggle" data-toggle="dropdown" href="/">
+            <img src="https://image.flaticon.com/icons/svg/2972/2972271.svg" width="30" height="30" alt="">
+                Mass    
+        </a>
+        <div class="dropdown-menu text-dark">
+            <a class="dropdown-item" href="/" style="background-color: orange; color: blue;">Home</a>
+            <a class="dropdown-item" href="/mass">Mass</a>
+            <a class="dropdown-item" href='/length'>Length</a>
+            <a class="dropdown-item" href="/velocity">Velocity</a>
+        </div>
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="#kilogram">Kilogram</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#gram">Gram</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#milligram">Milligram</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#microgram">Microgram</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#metric ton">Metric Ton</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#imperial ton">Imperial Ton</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#us ton">US Ton</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#stone">Stone</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#pound">Pound</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#ounce">Ounce</a>
+            </li>
+        </ul>
+    </nav><br>
+    <div class="container">
+        <div class="jumbotron text-white text-center" id="jb">
+            <h3 class="display-4" style="font-family: Kanit;">About</h3>
+            <hr class="my-4" style="border-top: 1px solid white;">
+            <p style="font-family: Arvo;">This page converts mass from selected units to every unit recognized by
+                the
+                <abbr title="International System of Units">S.I. units</abbr><br>
+            <div id="addText">
+                To convert from a unit, click on the Navigation bar above or scroll down till you see the
+                title of the unit you want to convert from. Then click on the input box to enter a number
+                and once you enter a <span style="border: 1px solid white;"> <strong> number</strong></span>
+                , then the submit button would show up with an in progress symbol.
+                Click on the button when done to display the conversions and click the up symbol to hide it.
+            </div>
+            <span style="text-decoration: underline; cursor: pointer;" id="rm">Read more</span>
+            </p>
+            <script>
+                let count = 0;
+                $(document).ready(function () {
+                    $("#addText").hide();
+                    $('#rm').click(function () {
+                        $("#addText").slideToggle(1000);
+                    });
+                });
+            </script>
+        </div>
+    </div>
+    <div id="kilogram">
+        <h2 class="head">Kilogram</h2>
+        <input type="number" class="num" id="kgNum" min="0" placeholder="Enter Kilograms here" step=".01"><br>
+        <button class="submit" id="kgSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="kgConv">
+            <h6>
+                <fieldset id="kg">
+                    <legend>Kilogram to <span id="Kgtyped"></span><i id='kgUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="kgEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="gram">
+        <h2 class="head">Gram</h2>
+        <input type="number" class="num" id="gNum" min="0" placeholder="Enter Grams here" step=".01"><br>
+        <button class="submit" id="gSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="gConv">
+            <h6>
+                <fieldset id="g">
+                    <legend>Gram to <span id="Gtyped"></span><i id='gUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="gEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="milligram">
+        <h2 class="head">Milligram</h2>
+        <input type="number" class="num" id="mgNum" min="0" placeholder="Enter Milligrams here" step=".01"><br>
+        <button class="submit" id="mgSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="mgConv">
+            <h6>
+                <fieldset id="mg">
+                    <legend>Milligram to <span id="Mgtyped"></span><i id='mgUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="mgEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="microgram">
+        <h2 class="head">Microram</h2>
+        <input type="number" class="num" id="ugNum" min="0" placeholder="Enter micrograms here" step=".01"><br>
+        <button class="submit" id="ugSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="ugConv">
+            <h6>
+                <fieldset id="ug">
+                    <legend>Microgram to <span id="Ugtyped"></span><i id='ugUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="ugEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="metric ton">
+        <h2 class="head">Metric Tons</h2>
+        <input type="number" class="num" id="mtNum" min="0" placeholder="Enter Metric Tons here" step=".01"><br>
+        <button class="submit" id="mtSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="mtConv">
+            <h6>
+                <fieldset id="mt">
+                    <legend>Metric Tons to <span id="Mttyped"></span><i id='mtUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="mtEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="imperial ton">
+        <h2 class="head">Imperial Tons</h2>
+        <input type="number" class="num" id="itNum" min="0" placeholder="Enter Imperial Tons here" step=".01"><br>
+        <button class="submit" id="itSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="itConv">
+            <h6>
+                <fieldset id="it">
+                    <legend>Imperial Tons to <span id="Ittyped"></span><i id='itUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="itEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="us ton">
+        <h2 class="head">US Tons</h2>
+        <input type="number" class="num" id="utNum" min="0" placeholder="Enter US Tons here" step=".01"><br>
+        <button class="submit" id="utSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="utConv">
+            <h6>
+                <fieldset id="ut">
+                    <legend>US Tons to <span id="Uttyped"></span><i id='utUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="utEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="stone">
+        <h2 class="head">Stones</h2>
+        <input type="number" class="num" id="sNum" min="0" placeholder="Enter Stones here" step=".01"><br>
+        <button class="submit" id="sSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="sConv">
+            <h6>
+                <fieldset id="s">
+                    <legend>Stones to <span id="Styped"></span><i id='sUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="sEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="pound">
+        <h2 class="head">Pounds</h2>
+        <input type="number" class="num" id="pNum" min="0" placeholder="Enter Pounds here" step=".01"><br>
+        <button class="submit" id="pSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="pConv">
+            <h6>
+                <fieldset id="p">
+                    <legend>Pounds to <span id="Ptyped"></span><i id='pUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="pEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <div id="ounce">
+        <h2 class="head">Ounces</h2>
+        <input type="number" class="num" id="oNum" min="0" placeholder="Enter Ounces here" step=".01"><br>
+        <button class="submit" id="oSub">Submit <i class="fa fa-spinner fa-spin"></i></button>
+        <div class="conv" id="oConv">
+            <h6>
+                <fieldset id="o">
+                    <legend>Ounces to <span id="Otyped"></span><i id='oUp' class="fa fa-angle-double-up"></i>
+                    </legend>
+                    <div id="oEmpty" class="fs">
+
+                    </div>
+                </fieldset>
+            </h6>
+        </div>
+    </div>
+    <br>
+    <footer id="sticky-footer" class="py-4 bg-secondary text-white-50">
+        <div class="container text-center">
+            <small>Copyright &copy; Your Website</small>
+        </div>
+    </footer>
+    <script>
+        var Kgtyped = new Typed('#Kgtyped', {
+            strings: ['Grams', 'Milligrams', 'Micrograms', 'Metric Tons', 'Imperial Tons', 'US Tons'
+                , 'Stones', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Gtyped = new Typed('#Gtyped', {
+            strings: ['Kilograms', 'Milligrams', 'Micrograms', 'Metric Tons', 'Imperial Tons', 'US Tons'
+                , 'Stones', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Mgtyped = new Typed('#Mgtyped', {
+            strings: ['Kilograms', 'Grams', 'Micrograms', 'Metric Tons', 'Imperial Tons', 'US Tons'
+                , 'Stones', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Ugtyped = new Typed('#Ugtyped', {
+            strings: ['Kilograms', 'Grams', 'Milligrams', 'Metric Tons', 'Imperial Tons', 'US Tons'
+                , 'Stones', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Mttyped = new Typed('#Mttyped', {
+            strings: ['Kilograms', 'Grams', 'Milligrams', 'Micrograms', 'Imperial Tons', 'US Tons'
+                , 'Stones', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Ittyped = new Typed('#Ittyped', {
+            strings: ['Kilograms', 'Grams', 'Milligrams', 'Micrograms', 'Metric Tons', 'US Tons'
+                , 'Stones', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Uttyped = new Typed('#Uttyped', {
+            strings: ['Kilograms', 'Grams', 'Milligrams', 'Micrograms', 'Imperial Tons', 'Metric Tons'
+                , 'Stones', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Styped = new Typed('#Styped', {
+            strings: ['Kilograms', 'Grams', 'Milligrams', 'Micrograms', 'Imperial Tons', 'US Tons'
+                , 'Metric Tons', 'Pounds', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Ptyped = new Typed('#Ptyped', {
+            strings: ['Kilograms', 'Grams', 'Milligrams', 'Micrograms', 'Imperial Tons', 'US Tons'
+                , 'Metric Tons', 'Stones', 'Ounces'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+        var Otyped = new Typed('#Otyped', {
+            strings: ['Kilograms', 'Grams', 'Milligrams', 'Micrograms', 'Imperial Tons', 'US Tons'
+                , 'Metric Tons', 'Stones', 'Pounds'],
+            typeSpeed: 100,
+            backDelay: 3000,
+            backSpace: 100,
+            loop: true,
+            smartBackspace: true,
+            shuffle: true
+        });
+    </script>
+</body>
+
+</html>
